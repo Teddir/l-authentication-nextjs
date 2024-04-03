@@ -18,6 +18,7 @@ import {
   ExclamationCircleFilled,
   PinterestFilled,
   GoogleCircleFilled,
+  GithubFilled,
 } from "@ant-design/icons";
 import Image from "next/image";
 
@@ -62,6 +63,15 @@ const Home = () => {
             icon={<PinterestFilled />}
             onClick={() => signIn("pinterest")}>
             Sign in with Pinterest
+          </Button>
+          <Button
+            type='primary'
+            style={{
+              backgroundColor: "#010409",
+            }}
+            icon={<GithubFilled />}
+            onClick={() => signIn("github")}>
+            Sign in with Github
           </Button>
         </div>
       ) : (

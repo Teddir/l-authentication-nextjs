@@ -1,6 +1,7 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import PinterestProvider from "next-auth/providers/pinterest";
+import GitHubProvider from "next-auth/providers/github";
 
 const handler = NextAuth({
   // Secret for Next-auth, without this JWT encryption/decryption won't work
@@ -15,6 +16,10 @@ const handler = NextAuth({
     PinterestProvider({
       clientId: process.env.PINTEREST_ID as string,
       clientSecret: process.env.PINTEREST_SECRET as string,
+    }),
+    GitHubProvider({
+      clientId: process.env.GITHUB_ID as string,
+      clientSecret: process.env.GITHUB_SECRET as string,
     }),
   ],
 });

@@ -19,6 +19,7 @@ import {
   PinterestFilled,
   GoogleCircleFilled,
 } from "@ant-design/icons";
+import Image from "next/image";
 
 const { confirm } = Modal;
 const { Meta } = Card;
@@ -64,25 +65,27 @@ const Home = () => {
           </Button>
         </div>
       ) : (
-        <Space wrap>
+        <Space
+          wrap
+          className='flex flex-col'>
+          <Image
+            width={0}
+            height={0}
+            sizes='90vw'
+            className='p-2 h-auto w-auto object-cover object-center'
+            alt='example'
+            src='./logoGue.svg'
+          />
           <Card
             style={{ width: 300 }}
-            cover={
-              <img
-                alt='example'
-                src='https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'
-              />
-            }
             actions={[
               <SettingOutlined key='setting' />,
               <EditOutlined key='edit' />,
               <Tooltip
                 title='SignOut'
-                color={"red"}>
-                <LogoutOutlined
-                  key='logout'
-                  onClick={showPromiseConfirm}
-                />
+                color={"red"}
+                key='logout'>
+                <LogoutOutlined onClick={showPromiseConfirm} />
               </Tooltip>,
             ]}>
             <Meta
